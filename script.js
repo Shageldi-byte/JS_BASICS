@@ -21,7 +21,7 @@
 
 // }
 
-integer22();
+
 
 
 // Integer
@@ -85,11 +85,70 @@ function integer22() {
 
 function integer25(){
     let n = 8;
-    let result = (n % 7)+3; // 2
-
+    let result = ((n+1) % 7);
+    console.log(result);
 }
 
 
+boolean7();
+
+function boolean1(){
+    5==5  // true
+    5=="5" // true
+    5==="5" // false
+    5>4 // true
+    5<4 // false
+    5>=5 // true
+    5<=5 // true
+    5!=5 // false
+    5!=6 // true
+    5!=="5" // false
+    5!=="6"  // false
+
+}
+
+function boolean2(){
+    let a = 5, b=6;
+    let result = (a > 2 && b<=3);
+    5 , 6 // false
+    5 , 3 // true
+    3 , 2 // true
+    1 , 1 // false
+
+}
+
+function boolean6(){
+    let a = 5, b = 6, c = 10;
+
+    let result = (a < b && b < c);
+
+    console.log(result);
+}
+
+function boolean7() {
+    let a = 10, b = 6, c = 5;  // 10 6 5
+    let result = (a < b && b < c) || (a > b && b > c);
+    console.log(result);
+}
+
+function boolean8(){
+    let a = 1, b=3;
+    let result = a%2===1 && b%2===1;
+    console.log(result);
+}
 
 
+function boolean9(){
+    let a = 2, b=2;
+    let result = a%2===1 || b%2===1;
+}
+
+function boolean10(){
+    let a = 1, b=2; // 2+4 = false  2+5 = true  1+2 = true  100+201 =true
+    let result = (a+b)%2!==0;
+}
+
+function boolean11(){
+    
+}
 
