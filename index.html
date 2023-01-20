@@ -5,11 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .grandparent {
+            background-color: red;
+            padding: 12px;
+            width: 300px;
+        }
+
+        .parent {
+            background-color: green;
+            display: flex;
+            margin-top: 12px;
+            padding: 12px;
+        }
+
+        .child {
+            background-color: blue;
+            width: 200px;
+            height: 100px;
+            margin: 10px;
+        }
+    </style>
 </head>
 
-<body>
+<body onload="load()">
+    <h2>Sozluk</h2>
+    <div style="display:flex">
+        <input type="text" placeholder="Search..." id="search" />
+        <button onclick="checkWord()">Search</button>
+    </div>
+    <div id="words">
 
-    <script src="script.js"></script>
+    </div>
+
+    <script src="definitions.js"></script>
+    <script src="dictionary.js"></script>
 </body>
 
 </html>
