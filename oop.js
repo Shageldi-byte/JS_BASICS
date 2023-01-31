@@ -266,6 +266,33 @@
     }
     let student1 = new headOfTheClassroom('Shageldi',22,'first');
     console.log(student1.toString());
+class Library{
+    books;
+    ebooks;
+    constructor(books,ebooks) {
+        this.books = books;
+        this.ebooks =ebooks;
+    };
+    getByAuthorName(authorName){
+        return [];
+    }
+}
+class Book {
+    name;
+    id;
+    constructor(name, id) {
+        this.id=id;
+        this.name=name;
+    }
+}
+let books = [
+    new Book('Name',1),
+    new Book('Name',2),
+    new Book('Name',3),
+    new Book('Name',4),
+];
+let booksOfAuthor=new Library(books,[]).getByAuthorName('Author');
+
 
 
 
