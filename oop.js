@@ -234,38 +234,39 @@
 
 
 // Inheritance example
-    class person{
-        constructor(name){
-            this.name = name;
-        }
-        // method to return the string
-        toString(){
-            return (`Name of person: ${this.name}`);
-        }
-    }
-    class student extends person{
-        constructor(name,id){
-            // super keyword for calling the above 
-            // class constructor
-            super(name);
-            this.id = id;
-        }
+//     class person{
+//         constructor(name){
+//             this.name = name;
+//         }
+//         // method to return the string
+//         toString(){
+//             return (`Name of person: ${this.name}`);
+//         }
+//     }
+//     class student extends person{
+//         constructor(name,id){
+//             // super keyword for calling the above 
+//             // class constructor
+//             super(name);
+//             this.id = id;
+//         }
 
 
-    }
+//     }
 
-    class headOfTheClassroom extends student{
-        degree;
-        constructor(name,id,degree){
-            super(name,id);
-            this.degree = degree;
-        }
-        toString(){
-            return(`${super.toString()}`);
-        }
-    }
-    let student1 = new headOfTheClassroom('Shageldi',22,'first');
-    console.log(student1.toString());
+//     class headOfTheClassroom extends student{
+//         degree;
+//         constructor(name,id,degree){
+//             super(name,id);
+//             this.degree = degree;
+//         }
+//         toString(){
+//             return(`${super.toString()}`);
+//         }
+//     }
+//     let student1 = new headOfTheClassroom('Shageldi',22,'first');
+//     console.log(student1.toString());
+
 class Library{
     books;
     ebooks;
@@ -280,16 +281,56 @@ class Library{
 class Book {
     name;
     id;
-    constructor(name, id) {
+    author;
+    constructor(name, id,author) {
         this.id=id;
         this.name=name;
+        this.author=author;
     }
 }
+
+class Person {
+    fname;
+    lname;
+    dob;
+    country;
+    constructor(fname, lname, dob,country) {
+        this.fname=fname;
+        this.lname=lname;
+        this.dob=dob;
+        this.country=country;
+    }
+    getFname(){return this.fname};
+    getLname(){return this.lname};
+    getCountry(){return this.country};
+    getDob(){return this.dob};
+    getAge(){
+        return new Date().getFullYear()-this.dob;
+    }
+    getDetails(){
+        return {
+            fname: this.fname,
+            lname: this.lname,
+            dob: this.dob,
+            country: this.country
+        };
+    }
+}
+
+class Author extends Person{
+    book_count;
+    job_expiration;
+    isBest;
+    constructor(fname,lname,dob,country,book_count,job_expiration,isBest) {
+        super(fname,lname,dob,country);
+        this.book_count=book_count;
+        this.job_expiration=job_expiration;
+        this.isBest=isBest;
+    }
+}
+
 let books = [
-    new Book('Name',1),
-    new Book('Name',2),
-    new Book('Name',3),
-    new Book('Name',4),
+    new Book('Name',1,new Author('Shageldi','Alyyew',2000,'TM',200,2,true)),
 ];
 let booksOfAuthor=new Library(books,[]).getByAuthorName('Author');
 
